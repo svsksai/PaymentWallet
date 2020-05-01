@@ -37,19 +37,20 @@ public class TransferFundServiceImpl implements TransferFundService {
 		toAccount.setBalance(toAccount.getBalance() + transferForm.getAmt());
 		
 		dao.editWalletAccount(fromAccount);
-		addTxn(fromAccount, transferForm.getAmt(), WalletConstants.CREDIT, WalletConstants.TRANSFERED_TO + fromAccount.getPhoneNo());
+		addTxn(fromAccount, transferForm.getAmt(), WalletConstants.DEBIT, WalletConstants.TRANSFERED_TO + toAccount.getPhoneNo(),fromAccount.getPhoneNo());
 				
 		dao.editWalletAccount(toAccount);
-		addTxn(toAccount, transferForm.getAmt(), WalletConstants.DEBIT, WalletConstants.TRANSFERED_FROM + toAccount.getPhoneNo());
+		addTxn(toAccount, transferForm.getAmt(), WalletConstants.CREDIT, WalletConstants.TRANSFERED_FROM + fromAccount.getPhoneNo(), toAccount.getPhoneNo());
 		return true;
 	}
 
-	public boolean addTxn(WalletAccount account, double amount, String txType, String description) {
+	public boolean addTxn(WalletAccount account, double amount, String txType, String description, String phoneNo) {
 		WalletTransaction walletTxn = new WalletTransaction();
 		walletTxn.setDescription(description);
 		walletTxn.setDateOfTranscation(LocalDate.now());
 		walletTxn.setTxType(txType);
 		walletTxn.setAmount(amount);
+		walletTxn.setAccount(account);
 		dao.addWalletTransaction(walletTxn);
 		return true;
 	}

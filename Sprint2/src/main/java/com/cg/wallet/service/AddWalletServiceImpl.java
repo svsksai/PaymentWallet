@@ -27,7 +27,7 @@ public class AddWalletServiceImpl implements AddWalletService {
 		WalletAccount account = dao.getWalletAccount(txnForm.getWalletAccountId());
 		account.setBalance(account.getBalance() + txnForm.getAmount());
 		WalletTransaction tx = new WalletTransaction();
-		tx.setTxType(WalletConstants.DEBIT);
+		tx.setTxType(WalletConstants.CREDIT);
 		tx.setDateOfTranscation(LocalDate.now());
 		tx.setAmount(txnForm.getAmount());
 		tx.setDescription(WalletConstants.AMOUNT_ADDED_TO_WALLET);
@@ -45,7 +45,7 @@ public class AddWalletServiceImpl implements AddWalletService {
 		dao.addWalletAccount(account);
 		if(account.getBalance()> WalletConstants.AMOUNT_ZERO) {
 			WalletTransaction tx = new WalletTransaction();
-			tx.setTxType(WalletConstants.DEBIT);
+			tx.setTxType(WalletConstants.CREDIT);
 			tx.setDateOfTranscation(LocalDate.now());
 			tx.setAmount(account.getBalance());
 			tx.setDescription(WalletConstants.AMOUNT_ADDED_TO_WALLET);

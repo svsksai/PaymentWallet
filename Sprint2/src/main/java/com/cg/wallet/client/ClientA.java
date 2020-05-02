@@ -26,7 +26,12 @@ public class ClientA {
 		  ApplicationContext ctx = new AnnotationConfigApplicationContext(JpaConfiguration.class);
 		  AddWalletService service = ctx.getBean(AddWalletService.class);
 		 
-		
+
+		/*
+		 * WalletAccount account1 = new WalletAccount(); account1.setBalance(1200);
+		 * account1.setPassword("prabhakar"); account1.setPhoneNo("8437481708");
+		 * account1.setUserName("Prabhakar123"); service.createAccount(account1);
+		 */
 		
 		/*
 		 * WalletAccount account = new WalletAccount(); TxnForm txnForm = new TxnForm();
@@ -39,20 +44,21 @@ public class ClientA {
 		
 		
 		
-		  WalletAccount act=new WalletAccount(); act.setPhoneNo("9949713956");
-		  TransferFundService transferService = ctx.getBean(TransferFundService.class);
-		  TransferForm transferForm = new TransferForm(); 
-		  transferForm.setAmt(350);
-		  transferForm.setFromaccountID("9949713956");
-		  transferForm.setToAccountID("7013625372");
-		  
-		  transferService.transferFund(transferForm);
-		  
+		/*
+		 * WalletAccount act=new WalletAccount(); act.setPhoneNo("9949713956");
+		 * TransferFundService transferService = ctx.getBean(TransferFundService.class);
+		 * TransferForm tf = new TransferForm(); tf.setFromaccountID("9917134477");
+		 * tf.setToAccountID("9949713956"); tf.setAmt(500);
+		 * transferService.transferFund(tf);
+		 */
 		  
 		  
-		  LoginService loginService = ctx.getBean(LoginService.class);
-		  System.out.println(loginService.doLogin("9949713956", "svsk1234"));
+		/*
+		 * LoginService loginService = ctx.getBean(LoginService.class);
+		 * System.out.println(loginService.doLogin("9949713956", "svsk1234"));
+		 */
 		 
+		  
 	}
 
 }

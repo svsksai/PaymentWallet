@@ -27,19 +27,22 @@ public class ClientA {
 		  AddWalletService service = ctx.getBean(AddWalletService.class);
 		 
 
+		
 		/*
-		 * WalletAccount account1 = new WalletAccount(); account1.setBalance(1200);
-		 * account1.setPassword("prabhakar"); account1.setPhoneNo("8437481708");
-		 * account1.setUserName("Prabhakar123"); service.createAccount(account1);
+		 * WalletAccount account1 = new WalletAccount(); account1.setBalance(500000);
+		 * account1.setPassword("svsksvsk"); account1.setPhoneNo("7013625372");
+		 * account1.setUserName("svsksai"); service.createAccount(account1);
 		 */
+		
 		
 		/*
 		 * WalletAccount account = new WalletAccount(); TxnForm txnForm = new TxnForm();
-		 * txnForm.setAmount(500); txnForm.setWalletAccountId("9949713956");
+		 * txnForm.setAmount(500000); txnForm.setWalletAccountId("7013625372");
 		 * account.setBalance(200); account.setPassword("svsk1234");
 		 * account.setPhoneNo("9949713956"); account.setUserName("RamaRaju");
 		 * service.createAccount(account); service.addAmountToWalletAccount(txnForm);
 		 */
+		 
 		 
 		
 		

@@ -5,6 +5,7 @@ public class TransferForm {
 	private String fromaccountID;
 	private String toAccountID;
 	private double amt;
+	
 	public String getFromaccountID() {
 		return fromaccountID;
 	}
@@ -23,6 +24,12 @@ public class TransferForm {
 	public void setAmt(double amt) {
 		this.amt = amt;
 	}
+	@Override
+	public String toString() {
+		return "TransferForm [fromaccountID=" + fromaccountID + ", toAccountID=" + toAccountID + ", amt=" + amt + "]";
+	}
+	
+	
 	
 	
 	

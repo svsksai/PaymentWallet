@@ -23,10 +23,13 @@ public class TransferController {
 	@PostMapping("/transfer")
 	public WalletMessage transferAccount( @RequestBody TransferForm transferForm) throws AccountNotFoundException, WalletTxnException 
 	{
+		System.out.println(transferForm);
 		service.transferFund(transferForm);
 		WalletMessage msg = new WalletMessage(WalletConstants.TRANSFER_SUCCESS);
 		return msg;
 		
 	}
+	
+	
 	
 }

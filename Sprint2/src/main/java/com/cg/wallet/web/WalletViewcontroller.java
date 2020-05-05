@@ -54,6 +54,7 @@ public class WalletViewcontroller {
 	public List<WalletTransaction> getTxnsToRecipent(@PathVariable("walletid") String walletUserId, @PathVariable("receipentid") String receipentId) throws WalletTXNNotFouException {
 		return walletService.findAmountTransferedToReceipent(walletUserId, receipentId);
 	}
+	
 	@CrossOrigin
 	@PostMapping("/gettxnsrecipenttodaterange")
 	public List<WalletTransaction> getTxnsToRecipentForDateRange(@RequestBody ReportForm form) throws WalletTXNNotFouException {

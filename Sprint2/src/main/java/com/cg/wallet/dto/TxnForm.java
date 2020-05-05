@@ -4,6 +4,7 @@ public class TxnForm {
 
 	private String walletAccountId;
 	private double amount;
+	
 	public String getWalletAccountId() {
 		return walletAccountId;
 	}

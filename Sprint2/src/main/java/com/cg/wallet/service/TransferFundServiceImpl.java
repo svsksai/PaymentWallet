@@ -22,7 +22,7 @@ public class TransferFundServiceImpl implements TransferFundService {
 	@Autowired
 	private IWalletDao dao;
 
-//\@Transactional(propagation = Propagation.REQUIRES_NEW)
+   // @Transactional(propagation = Propagation.REQUIRES_NEW)
 	@Override
 	public boolean transferFund(TransferForm transferForm) throws AccountNotFoundException, WalletTxnException {
 		WalletAccount fromAccount = dao.getWalletAccount(transferForm.getFromaccountID());

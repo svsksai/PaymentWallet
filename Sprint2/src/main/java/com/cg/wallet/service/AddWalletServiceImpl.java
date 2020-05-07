@@ -61,5 +61,10 @@ public class AddWalletServiceImpl implements AddWalletService {
 		
 		return dao.getWalletAccount(walletAccountId);
 	}
+	
+	@Override
+	public double showBalance(String walletAccountId) {
+		return dao.getWalletAccount(walletAccountId).getBalance();
+	}
 
 }

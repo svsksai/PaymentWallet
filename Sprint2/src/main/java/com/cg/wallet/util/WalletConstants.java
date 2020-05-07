@@ -10,7 +10,7 @@ public class WalletConstants {
 	public static final String ID_EXISTS="ID ALready Exists";
 	public static final String DEBIT="DEBIT";
 	public static final String CREDIT="CREDIT";
-	public static final String ACOUNT_ADDED_TO_WALLET="Account Added To Wallet";
+	public static final String ACOUNT_ADDED_TO_WALLET="Amount Added To Wallet";
 	public static final String TRANSFERED_TO= "Transferred To ";
 	public static final String TRANSFERED_FROM= "Transferred FROM ";
 	public static final String AMOUNT_ADDED_TO_WALLET= "Amount Added To Wallet.";

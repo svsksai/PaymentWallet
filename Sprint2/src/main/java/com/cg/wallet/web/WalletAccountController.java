@@ -46,7 +46,14 @@ public class WalletAccountController {
 		
 	}
 	@GetMapping("/accountsummary/{walletid}")
+	@CrossOrigin
 	public WalletAccount getaccountSummary(@PathVariable("walletid") String walletId) {
 		return walletService.getAccount(walletId);
+	}
+	
+	@CrossOrigin
+	@GetMapping("/showbalance/{walletid}")
+	public double showBalance(@PathVariable("walletid") String walletId) {
+		return walletService.showBalance(walletId);
 	}
 }

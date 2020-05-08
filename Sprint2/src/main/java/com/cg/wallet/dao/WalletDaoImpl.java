@@ -55,7 +55,8 @@ public class WalletDaoImpl implements IWalletDao{
 	 **********************************************************************************/
 	@Override
 	public List<WalletTransaction> getWalletTransactions(String walletUserId) {
-		String jpql = "from WalletTransaction walletTransaction inner join fetch walletTransaction.account walletAccount  where walletAccount.phoneNo=:walletUserid";
+		String jpql = "from WalletTransaction walletTransaction inner join fetch walletTransaction.account walletAccount "
+				+ " where walletAccount.phoneNo=:walletUserid";
 		TypedQuery<WalletTransaction> query = entityManager.createQuery(jpql, WalletTransaction.class);
 		query.setParameter("walletUserid", walletUserId);
 		return query.getResultList();
@@ -73,7 +74,8 @@ public class WalletDaoImpl implements IWalletDao{
 	 **********************************************************************************/
 	@Override
 	public List<WalletTransaction> getWalletTransactions(String walletUserId, int txns) {
-		String jpql = "from WalletTransaction walletTransaction inner join fetch walletTransaction.account walletAccount where walletAccount.phoneNo=:walletUserid order by walletTransaction.dateOfTransction desc";
+		String jpql = "from WalletTransaction walletTransaction inner join fetch walletTransaction.account walletAccount"
+				+ " where walletAccount.phoneNo=:walletUserid order by walletTransaction.dateOfTransction desc";
 		TypedQuery<WalletTransaction> query = entityManager.createQuery(jpql, WalletTransaction.class);
 		query.setFirstResult(1);
 		query.setMaxResults(txns);
